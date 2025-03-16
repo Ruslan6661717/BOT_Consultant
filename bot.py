@@ -1,10 +1,13 @@
 import logging
 import asyncio
+import os
+
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from database import init_db, get_answer, add_answer, delete_answer, list_questions
-
-TOKEN = "6719594903:AAFCZLrj391woSzJwWAKR_A5ncbfjWTp_cc"
+from dotenv import load_dotenv
+load_dotenv()
+TOKEN = os.getenv("BOT_TOKEN")
 
 logging.basicConfig(level=logging.INFO)
 
